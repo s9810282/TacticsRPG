@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.Collections;
 public class CameraRig : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float speed = 3f;
+    public Transform follow;
+    Transform _transform;
+
+    void Awake()
     {
-        
+        _transform = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.localPosition = Vector3.Lerp(transform.position, follow.localPosition, speed * Time.deltaTime);
     }
 }

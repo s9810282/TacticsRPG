@@ -1,18 +1,42 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class MoveTargetState : MonoBehaviour
+public class MoveTargetState : BattleState
 {
-    // Start is called before the first frame update
-    void Start()
+    List<Tile> tiles;
+
+    public override void Enter()
     {
-        
+        base.Enter();
+
+        // 사용자가 Unit을 선택하면 MoveTargetState 상태가 되어
+        // 이동 가능한 타일들의 색상을 변경한다.
+        Movement mover = owner.currentUnit.GetComponent<Movement>();
+        tiles = mover.GetTilesInRange(board);
+        board.SelectTiles(tiles);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        base.Exit();
+
+        // MoveTargetState 상태가 종료되면
+        // 변경된 타일들의 색상을 원래대로 변경한다.
+        board.DeSelectTiles(tiles);
+        tiles = null;
+    }
+
+
+    protected override void OnMove(object sender, InfoEventArgs<Point> e)
+    {
+        SelectTile(e.info + pos);
+    }
+
+    protected override void OnFire(object sender, InfoEventArgs<int> e)
+    {
+        // 클릭한 타일로 이동시킵니다.
+        if (tiles.Contains(owner.currentTile))
+            owner.ChangeState<MoveSequenceState>();
     }
 }

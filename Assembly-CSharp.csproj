@@ -74,20 +74,35 @@
     <Compile Include="Assets\Scripts\Common\Animations\Vector3Tweener.cs" />
     <Compile Include="Assets\Scripts\Common\StateMachine\State.cs" />
     <Compile Include="Assets\Scripts\Common\StateMachine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\LayoutAnchor.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\Panel.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\RectTransformAnchorPositionTweener.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\RectTransformAnimationExtensions.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BattleController.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BattleState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\InitBattleState.cs" />
+    <Compile Include="Assets\Scripts\Controller\Battle State\MoveSequenceState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveTargetState.cs" />
+    <Compile Include="Assets\Scripts\Controller\Battle State\SelectUnitState.cs" />
     <Compile Include="Assets\Scripts\Controller\InputController.cs" />
     <Compile Include="Assets\Scripts\Controller\InputTester.cs" />
+    <Compile Include="Assets\Scripts\Enums.cs" />
     <Compile Include="Assets\Scripts\EventArgs\InfoEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Extension\DirectionsExtenstions.cs" />
     <Compile Include="Assets\Scripts\Model(MVC)\LevelData.cs" />
     <Compile Include="Assets\Scripts\Model(MVC)\Point.cs" />
     <Compile Include="Assets\Scripts\PreProduction\BoardCreator.cs" />
     <Compile Include="Assets\Scripts\PreProduction\BoardCreatorInspector.cs" />
+    <Compile Include="Assets\Scripts\Temp\AnchorTest.cs" />
+    <Compile Include="Assets\Scripts\Temp\PanelTest.cs" />
     <Compile Include="Assets\Scripts\View Model Controller\Board.cs" />
     <Compile Include="Assets\Scripts\View Model Controller\CameraRig.cs" />
+    <Compile Include="Assets\Scripts\View Model Controller\Movement\FlyMovement.cs" />
+    <Compile Include="Assets\Scripts\View Model Controller\Movement\Movement.cs" />
+    <Compile Include="Assets\Scripts\View Model Controller\Movement\TeleportMovement.cs" />
+    <Compile Include="Assets\Scripts\View Model Controller\Movement\WalkMovement.cs" />
     <Compile Include="Assets\Scripts\View Model Controller\Tile.cs" />
+    <Compile Include="Assets\Scripts\View Model Controller\Unit.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
